@@ -11,7 +11,7 @@ pipeline {
                     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Load nvm
                     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-                    nvm use 18  # or whatever version you use
+                    nvm use 22.15.1  # or whatever version you use
                     npm install
                     npm run build
                     '''
