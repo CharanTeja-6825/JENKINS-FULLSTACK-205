@@ -23,7 +23,7 @@ public class Student {
 	private String year; // 1 or 2 or 3
 	@Column(name = "student_semester", nullable = false, length = 10)
 	private String semester; // ODD or EVEN
-	@Column(name = "student_email", nullable = false, unique = true, length = 255)
+	@Column(name = "student_email", nullable = false, unique = true, length = 50)
 	private String email;
 	@Column(name = "student_password", nullable = false, length = 50)
 	private String password;
