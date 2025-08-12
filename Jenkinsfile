@@ -42,10 +42,14 @@ pipeline {
         stage('Build Backend') {
             steps {
                 dir('STUDENTAPI-SPRINGBOOT') {
-                    sh 'mvn clean package'
+                    sh '''
+                    export PATH="/opt/homebrew/bin:$PATH"
+                    mvn clean package
+                    '''
                 }
             }
         }
+
 
         // ===== BACKEND DEPLOY =====
         stage('Deploy Backend to Tomcat') {
