@@ -6,11 +6,19 @@ pipeline {
         stage('Build Frontend') {
             steps {
                 dir('STUDENTAPI-REACT') {
-                    sh 'npm install'
-                    sh 'npm run build'
+                    sh '''
+                    export NVM_DIR="$HOME/.nvm"
+                    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Load nvm
+                    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+                    nvm use 18  # or whatever version you use
+                    npm install
+                    npm run build
+                    '''
                 }
             }
-        }
+}
+
 
         // ===== FRONTEND DEPLOY =====
         stage('Deploy Frontend to Tomcat') {
