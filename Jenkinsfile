@@ -17,9 +17,9 @@ pipeline {
                     '''
                 }
             }
-}
+        }
 
-}
+
 
 
         // ===== FRONTEND DEPLOY =====
