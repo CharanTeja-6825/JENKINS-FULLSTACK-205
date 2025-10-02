@@ -26,7 +26,7 @@ pipeline {
         stage('Deploy Frontend to Tomcat') {
             steps {
                 sh '''
-                TOMCAT_DIR="/Users/charanteja/Applications/apache-tomcat-10.1.44/webapps/reactstudentapi"
+                TOMCAT_DIR="/Users/rathikindicharanteja/Applications/apache-tomcat-10.1.44/webapps/reactstudentapi"
 
                 if [ -d "$TOMCAT_DIR" ]; then
                     rm -rf "$TOMCAT_DIR"
@@ -55,7 +55,7 @@ pipeline {
         stage('Deploy Backend to Tomcat') {
             steps {
                 sh '''
-                TOMCAT_WEBAPPS="/Users/charanteja/Applications/apache-tomcat-10.1.44/webapps"
+                TOMCAT_WEBAPPS="/Users/rathikindicharanteja/Applications/apache-tomcat-10.1.44/webapps"
                 WAR_FILE="$TOMCAT_WEBAPPS/springbootstudentapi.war"
                 WAR_DIR="$TOMCAT_WEBAPPS/springbootstudentapi"
 
